@@ -5,7 +5,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class ParametersTesting {
-
+//Test NG Parameter testing and verify wether it is updated in GitHub
 	@Parameters({ "BrowserName" })
 	@Test
 	public void OpenBrowser(String BrowserName) {
