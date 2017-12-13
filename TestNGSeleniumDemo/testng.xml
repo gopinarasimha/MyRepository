@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parameters Testing Test Suite">
+	<test name="Parameters Testing">
+		<parameter name="BrowserName" value="Firefox" />
+		<parameter name="UserName" value="demo" />
+		<parameter name="Passcode" value="PASSWORD" />
+		<classes>
+			<class name="com.mits.selenium.testing.ParametersTesting" />
+		</classes>
+	</test>
+	<test name="TestNGTesting">
+		<classes>
+			<class name="com.mits.selenium.testing.SeleniumWebDriverTest" />
+		</classes>
+	</test>
+	<test name="Optional Testing Part1">
+		<classes>
+			<class name="com.mits.selenium.testing.OptionalTesting" />
+		</classes>
+	</test>
+	<test name="Optional Testing Part2">
+		<parameter name="optional-value" value="Provided from XML" />
+		<classes>
+			<class name="com.mits.selenium.testing.OptionalTesting" />
+		</classes>
+	</test>
+	<test name="DataProviderTest">
+		<classes>
+			<class name="com.mits.selenium.testing.DataProviderTest" />
+		</classes>
+	</test>
+</suite>
