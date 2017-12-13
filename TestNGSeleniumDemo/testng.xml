@@ -31,3 +31,10 @@
 		</classes>
 	</test>
 </suite>
+<suite name="2ndSuite">
+	<test name="DataProviderTest">
+		<classes>
+			<class name="com.mits.selenium.testing.DataProviderTest" />
+		</classes>
+	</test>
+</suite>
