@@ -2,6 +2,7 @@ package com.mits.test.automation.icm.login;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -22,7 +23,7 @@ public class LoginAutomate {
 			
 				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-				driver.get("http://192.168.231.149:9080/navigator/?desktop=icm");
+				driver.get("http://192.168.231.153:9080/navigator/?desktop=icm");
 
 				driver.manage().window().maximize();
 			}
@@ -38,6 +39,23 @@ public class LoginAutomate {
 			return null;
 		}
 
+	}
+	
+	public void loginApplication(String userName, String password,String domain){
+		
+		try{
+			driver.findElement(By.xpath(".//*[@id='ecm_widget_layout_NavigatorMainLayout_0_LoginPane_username']")).sendKeys(userName);
+		      
+		    driver.findElement(By.xpath(".//*[@id='ecm_widget_layout_NavigatorMainLayout_0_LoginPane_password']")).sendKeys(password);
+		      
+		    driver.findElement(By.xpath(".//*[@id='ecm_widget_layout_NavigatorMainLayout_0_LoginPane_LoginButton']")).click();
+		      
+		      Thread.sleep(3000);
+		      
+		}catch(Exception e){
+			e.printStackTrace();
+			System.out.println("Failed Login into the application");
+		}
 	}
 
 	public void closeBrowser() {

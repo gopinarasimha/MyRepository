@@ -8,7 +8,7 @@ public class CaseSearch {
 	public void caseEnquiry(WebDriver driver, String value){
 		
 		try{
-			driver.findElement(By.xpath(".//*[@id='CmAcmCaseIdentifier icm_pgwidget_casesearch_CaseSearch_0']")).sendKeys(value);
+			driver.findElement(By.xpath(".//*[@id='NAO_AccountNumber icm_pgwidget_casesearch_CaseSearch_0']")).sendKeys(value);
 		      
 		    Thread.sleep(2000);
 		      
@@ -25,11 +25,10 @@ public class CaseSearch {
 	public void verifyCaseDetails(WebDriver driver, String value){
 		
 		try{
-			driver.findElement(By.xpath(".//*[@id='CmAcmCaseIdentifier icm_pgwidget_casesearch_CaseSearch_0']")).sendKeys(value);
-		      
-		    Thread.sleep(2000);
-		      
-		    driver.findElement(By.xpath(".//*[@id='dijit_form_Button_18_label']")).click();
+			
+			Thread.sleep(2000);
+			
+			driver.findElement(By.xpath(".//*[@title='TS_Test_000000100001']")).click();
 		      
 		}catch(Exception e){
 			
