@@ -23,7 +23,7 @@ public class LoginAutomate {
 			
 				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-				driver.get("http://192.168.231.153:9080/navigator/?desktop=icm");
+				driver.get("http://192.168.231.156:9080/navigator/?desktop=icm");
 
 				driver.manage().window().maximize();
 			}

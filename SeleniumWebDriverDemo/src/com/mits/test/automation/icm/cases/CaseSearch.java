@@ -2,9 +2,11 @@ package com.mits.test.automation.icm.cases;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
 
 public class CaseSearch {
 	
+	@Test
 	public void caseEnquiry(WebDriver driver, String value){
 		
 		try{
@@ -21,7 +23,7 @@ public class CaseSearch {
 			e.printStackTrace();
 		}
 	}
-	
+	@Test
 	public void verifyCaseDetails(WebDriver driver, String value){
 		
 		try{

@@ -2,10 +2,13 @@ package com.mits.test.automation.icm.cases;
 
 import java.util.List;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 
 import com.mits.test.automation.icm.login.LoginAutomate;
 
@@ -14,12 +17,42 @@ public class CaseComments {
 	public static WebDriver webDriver= null;
 	
 	
+	@BeforeMethod
+	public void startFireFox() {
+
+		System.out.println("Entered into start Chrome");
+		
+		LoginAutomate loginAutomate = new LoginAutomate();
+		
+		webDriver = loginAutomate.intiateBrowser();
+		
+		loginAutomate.loginApplication("p8admin", "filenet", null);
+		
+		System.out.println("Exit from start Chrome");
+	}
+	
+	@Parameters({ "comments" })
+	@Test
 	public void writeCaseComments(String comments){
 		try{
 			
+			System.out.println("Entered into writeCaseComments:"+comments);
+			
+			CaseSearch caseSearch = new CaseSearch();
+			
+			caseSearch.caseEnquiry(webDriver, "%");
+			
+			caseSearch.verifyCaseDetails(webDriver, "%");
+			
+			Thread.sleep(1000);
+			
 			 List<WebElement> webElements = webDriver.findElements(By.xpath(".//*[@dojoattachpoint='toolbarColumn_left']"));
 			 
-			for(int i=0;i<webElements.size();i++){
+			 System.out.println("webElements size:"+webElements.size());
+			 
+			 for(int i=0;i<webElements.size();i++){
+				 
+				 System.out.println("Inside for loop");
 				
 				if(webElements.get(i).getText().contains("Comments")){
 					
@@ -37,17 +70,30 @@ public class CaseComments {
 					
 					commentsWebElementArea.sendKeys(comments);
 					
-					//webDriver.findElement(By.xpath(".//*[@id='dijit_form_Button_31_label']")).click();
+					webDriver.findElement(By.xpath(".//*[@id='dijit_form_Button_31_label']")).click();
 					
-				}/*else{
+				}else{
 					System.out.println("Entered into else condition:"+webElements.get(i).getText());
-				}*/
+				}
 				
 			}
 			
 		}catch(Exception e){
 			e.printStackTrace();
+			System.out.println("Exception Occured inside the writeCaseComments method");
 		}
+	}
+	
+	@AfterMethod
+	public void cleaupProc() {
+		
+		System.out.println("Entered into cleaupProc");
+		
+		System.out.print("\nBrowser close");
+		
+		webDriver.quit();
+		
+		System.out.println("Exit from cleaupProc");
 	}
 	
 	public static void main(String[] args) throws Exception{
