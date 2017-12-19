@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="BatchProgramTesting">
+	<test thread-count="5" name="FunctionalTesting1">
+		<parameter name="value1" value="4" />
+		<parameter name="value2" value="2" />
+		<parameter name="value3" value="5" />
+		<classes>
+			<class name="com.mits.batch.testing.automation.BatchTestAutomation" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
