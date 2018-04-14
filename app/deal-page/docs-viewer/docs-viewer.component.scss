@@ -1,0 +1,97 @@
+.docs-viewer_wrap {
+    position: relative;
+    width: 100%;
+    float: left;
+}
+
+.docs-viewer {
+    text-align: center;
+    overflow-y: auto;
+    overflow-x: auto;
+    max-height: calc(100vh - 96px);
+
+    /deep/ canvas {
+        max-width: 100%;
+        max-height: calc(100vh - 100px);
+        width: 75vh;
+        transform-origin: 0% 0%;
+        border-radius: 3px;
+        border: 2px solid #d6d6d6;
+        box-sizing: border-box;
+    }
+
+    &_controls {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        background: white;
+        transform: translate(-50%, 50%);
+        color: black;
+        padding: 3px 5px;
+        border-radius: 2px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+
+        &.pagination {
+            top: 0;
+            bottom: auto;
+            transform: none;
+            margin-left: -64px;
+            margin-top: -14px;
+            white-space: nowrap;
+            z-index: 3;
+
+            input {
+                width: 30px;
+                text-align: center;
+                vertical-align: text-bottom;
+            }
+
+            i {
+                position: relative;
+                font-size: 21px;
+                margin: 0 5px;
+
+                &:hover {
+                    &:after {
+                        opacity: 1;
+                    }
+                }
+
+                &.first {
+                    &:after {
+                        content: '';
+                        width: 2px;
+                        height: calc(100% - 8px);
+                        background: black;
+                        position: absolute;
+                        top: 4px;
+                        left: -1px;
+                        opacity: 0.8;
+                    }
+                }
+
+                &.last {
+                    &:after {
+                        content: '';
+                        width: 2px;
+                        height: calc(100% - 8px);
+                        background: black;
+                        position: absolute;
+                        top: 4px;
+                        right: -1px;
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+
+        i {
+            cursor: pointer;
+            opacity: 0.8;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}

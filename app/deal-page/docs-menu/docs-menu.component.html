@@ -1,0 +1,65 @@
+<div class="docs-menu_wrap">
+    <app-custom-button #docsBtn
+        [icon]="'filter'"
+        [text]="'Filter'"
+        (onClick)="toggleShowMenu()"
+    ></app-custom-button>
+    <div [class.active]="showMenu" class="docs-menu">
+        <div class="docs-menu_filter-item sort">
+            <span>Sort</span>
+            <label [class.active]="sort == 'asc'">
+                <input
+                    type="checkbox"
+                    name="asc"
+                    [(ngModel)]="sort"
+                    (ngModelChange)="sort = 'asc'; changeFilter()"
+                />
+                <i class="fa fa-sort-alpha-asc" aria-hidden="true"></i>
+                Ascending
+            </label>
+            <label [class.active]="sort == 'desc'">
+                <input
+                    type="checkbox"
+                    name="desc"
+                    [(ngModel)]="sort"
+                    (ngModelChange)="sort = 'desc'; changeFilter()"
+                />
+                <i class="fa fa-sort-alpha-desc" aria-hidden="true"></i>
+                Descending
+            </label>
+        </div>
+        <div class="docs-menu_filter-item filter">
+            <span>Filter</span>
+            <label [class.active]="duplicates">
+                <span class="fa fa-check" aria-hidden="true"></span>
+                <input
+                    type="checkbox"
+                    name="duplicates"
+                    [(ngModel)]="duplicates"
+                    (ngModelChange)="changeFilter()"
+                />
+                Duplicates
+            </label>
+            <label [class.active]="screenable">
+                <span class="fa fa-check" aria-hidden="true"></span>
+                <input
+                    type="checkbox"
+                    name="screenable"
+                    [(ngModel)]="screenable"
+                    (ngModelChange)="changeFilter()"
+                />
+                Screenable
+            </label>
+            <label [class.active]="nonscreenable">
+                <span class="fa fa-check" aria-hidden="true"></span>
+                <input
+                    type="checkbox"
+                    name="nonscreenable"
+                    [(ngModel)]="nonscreenable"
+                    (ngModelChange)="changeFilter()"
+                />
+                Non-screenable
+            </label>
+        </div>
+    </div>
+</div>

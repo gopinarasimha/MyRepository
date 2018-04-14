@@ -1,0 +1,79 @@
+@import '../../../mixin';
+
+:host {
+    display: block;
+
+    @include content-height();
+}
+
+.docs-list {
+    overflow: hidden;
+
+    &_wrap {
+        clear: both;
+        height: calc(100vh - 140px);
+        overflow-y: scroll;
+    }
+
+    &_actions {
+        position: relative;
+        margin-bottom: 10px;
+        clear: both;
+        padding: 0 5px;
+        @include content-height();
+    }
+
+    &_controls {
+        display: inline-block;
+        position:absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        i {
+            position: relative;
+            font-size: 21px;
+            cursor: pointer;
+            color: #696969;
+
+            &.filter {
+                font-size: 15px;
+                padding: 3px;
+                top: -3px;
+                border-radius: 3px;
+                border: 1px solid transparent;
+                box-sizing: border-box;
+
+                &:after {
+                    content: initial;
+                }
+
+                &:hover,
+                &.active {
+                    background: #fafafa;
+                    border: 1px solid #eaeaea;
+                }
+            }
+
+            &:after {
+                content: '';
+                display: block;
+                width: 1px;
+                height: calc(100% - 10px);
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                background: #696969;
+            }
+
+            &.prev {
+                &:after {
+                    left: 0;
+                    width: 2px;
+                    right: auto;
+                }
+            }
+        }
+    }
+}

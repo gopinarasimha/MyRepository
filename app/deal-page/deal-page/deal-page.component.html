@@ -1,0 +1,35 @@
+<div class="deal-page_docs">
+    <div class="deal-page_docs-thumbnails">
+        <div class="block-header">
+            Pages for doc {{ dealObject.dealId }}
+        </div>
+        <app-docs-list #docList [pages]="dealObject.documentsList" [activePage]="activePageNumber"></app-docs-list>
+    </div>
+    <div class="deal-page_docs-viewer">
+        <div *ngIf="dealObject.clientId || dealObject.dealId || dealObject.productCode || dealObject.stepCode" class="block-header">
+            <span *ngIf="dealObject.clientId">Client ID: {{ dealObject.clientId }}</span>
+            <span *ngIf="dealObject.dealId">Deal ID: {{ dealObject.dealId }}</span>
+            <span *ngIf="dealObject.productCode">Product Code: {{ dealObject.productCode }}</span>
+            <span *ngIf="dealObject.stepCode">Step Code: {{ dealObject.stepCode }}</span>
+        </div>
+        <app-docs-viewer [item]="activePage"></app-docs-viewer>
+    </div>
+</div>
+<app-deal-info [activePage]="activePage"></app-deal-info>
+<div class="page_controls">
+    <app-custom-button
+        [icon]="'arrow-left'"
+        [text]="'Go Back to Edit Classifications'"
+        [theme]="'blue'"
+        (onClick)="previousPage()"
+    >
+    </app-custom-button>
+    <app-custom-button
+        [icon]="'check'"
+        [text]="'Approve page'"
+        [theme]="'green'"
+        (onClick)="approvePage()"
+        *ngIf="showApprovePageBtn"
+    >
+    </app-custom-button>
+</div>

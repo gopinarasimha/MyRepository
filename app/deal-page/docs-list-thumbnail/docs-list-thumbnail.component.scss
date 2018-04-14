@@ -1,0 +1,65 @@
+@import '../../../variables';
+
+:host {
+    display: block;
+    text-align: left;
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+.docs-thumbnail_wrap {
+    position: relative;
+    display: inline-block;
+    border: 2px solid #d6d6d6;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &.active {
+        border-color: $blueBackground;
+    }
+
+    &.approved {
+        border-color: $greenBackground;
+        color: $greenBackground;
+        font-size: 35px;
+
+        &:after {
+            content: "\f058";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba($greenBackground, 0.3);
+            z-index: 1;
+        }
+    }
+}
+
+.docs-thumbnail_classification {
+    background: $greenBackground;
+    padding: 5px 10px;
+    position: absolute;
+    top: 10px;
+    right: -10px;
+    color: white;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+.docs-thumbnail {
+    /deep/ canvas {
+        height: 200px;
+        width: 150px;
+    }
+}

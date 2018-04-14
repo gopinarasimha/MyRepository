@@ -1,0 +1,21 @@
+:host {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.name-capture-add {
+    display: inline-block;
+    color: #0375b0;
+    border-radius: 5px;
+    font-size: 25px;
+    font-weight: bold;
+    border: 1px solid #0375b0;
+    padding: 10px 20px;
+    cursor: pointer;
+
+    i {
+        margin-right: 30px;
+    }
+}

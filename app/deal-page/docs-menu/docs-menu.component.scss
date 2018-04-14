@@ -1,0 +1,221 @@
+@import "../../../variables";
+
+.docs-menu {
+    position: absolute;
+    width: 295px;
+    top: calc(100% + 10px);
+    background: white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 10;
+
+    &_wrap {
+        position: relative;
+        float: left;
+        z-index: 1;
+    }
+
+    &.active {
+        display: block;
+    }
+
+    &_filter-item {
+        padding: 10px;
+        border-bottom: 1px solid #c0c0c0;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        &.sort {
+            span {
+                margin-right: 20px;
+            }
+
+            label {
+                display: inline-block;
+                margin-right: 10px;
+                padding: 5px 10px;
+                border: 1px solid #c0c0c0;
+                background: #eee;
+                border-radius: 5px;
+                color: #70959b;
+                font-size: 0.85em;
+
+                &.active {
+                    background: $greenBackground;
+                    border-color: #3f9c35;
+                    color: white;
+                }
+
+                input {
+                    display: none;
+                }
+            }
+        }
+
+        &.filter {
+            input {
+                display: none;
+            }
+
+            label {
+                position: relative;
+                display: block;
+                line-height: 34px;
+                padding-left: 20px;
+                border-top: 1px solid #c0c0c0;
+                cursor: pointer;
+
+                span {
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                    margin: 0;
+                    width: 14px;
+                    height: 14px;
+                    border-radius: 3px;
+                    border: 1px solid #c0c0c0;
+                    color: white;
+                    background: white;
+                    font-size: 12px;
+
+                    &:before {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+
+                &.active {
+                    span {
+                        background: $greenBackground;
+                        border-color: $greenBackground;
+                    }
+                }
+            }
+        }
+
+        span {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+    }
+
+    /*.ui-multiselect {
+        display: block;
+        border-radius: 4px;
+
+        .ui-multiselect-header {
+            border-radius: 0;
+            border: 0;
+            margin-bottom: 0;
+
+            .ui-chkbox {
+                top: 7px;
+            }
+        }
+
+        .ui-multiselect-panel {
+            padding: 0;
+            right: 0;
+        }
+
+        .ui-multiselect-label {
+            line-height: 1.4;
+            white-space: nowrap;
+        }
+
+        .ui-multiselect-item {
+            line-height: 32px;
+            border-bottom: 1px solid #c0c0c0;
+            border-radius: 0;
+            margin: 0;
+
+            &.ui-state-highlight {
+                background: $greenBackground;
+            }
+
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+
+        .ui-multiselect-items-wrapper {
+            padding: 0;
+        }
+
+        .ui-multiselect-trigger {
+            background: $blueBackground;
+            color: white;
+            width: 30px;
+
+            .fa {
+                display: inherit;
+                margin: 0;
+                top: 50%;
+                left: 50%;
+                position: relative;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .ui-multiselect-close {
+            display: none;
+        }
+
+        .ui-multiselect-filter-container {
+            width: calc(100% - 1.25em);
+
+            .ui-inputtext {
+                border-radius: 0;
+                padding: 0.125em 1.625em 0.125em 0.125em;
+            }
+
+            .fa-search {
+                position: absolute;
+                right: 0;
+                left: auto;
+                height: 1.5em;
+                width: 1.5em;
+                top: 0;
+                background: $greenBackground;
+                color: white;
+
+                &:before {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+
+        .ui-chkbox {
+            float: left;
+            top: 11px;
+            position: relative;
+            width: 1em;
+            height: 1em;
+
+            &-icon {
+                font-size: 0.6em;
+                line-height: 1;
+            }
+
+            &-box {
+                width: 0.75em;
+                height: 0.75em;
+                left: 0.125em;
+                position: relative;
+
+                &.ui-state-active {
+                    background: $greenBackground;
+                    border-color: darken($greenBackground, 5%);
+                }
+            }
+        }
+    }*/
+}

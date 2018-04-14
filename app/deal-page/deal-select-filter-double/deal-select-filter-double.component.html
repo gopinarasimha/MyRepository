@@ -1,0 +1,22 @@
+<span class="deal-select_filter-label">
+    {{ filterLabel }}
+</span>
+<p-dropdown
+    class="deal-select_filter-type"
+    [options]="searchTypes"
+    [(ngModel)]="searchType"
+    (ngModelChange)="filterChanged()"
+>
+</p-dropdown>
+<p-dropdown
+    class="deal-select_filter-type"
+    [options]="searchKeys"
+    [(ngModel)]="searchKey"
+    (ngModelChange)="filterChanged()"
+>
+</p-dropdown>
+<input type="text"
+       class="deal-select_filter-search"
+       [(ngModel)]="searchText"
+       (ngModelChange)="filterChanged()"
+/>

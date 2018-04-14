@@ -1,0 +1,17 @@
+<div class="docs-list_actions">
+    <app-docs-menu></app-docs-menu>
+    <div class="docs-list_controls">
+        <i class="fa fa-files-o filter"
+           aria-hidden="true"
+           [class.active]="showFilteringDocs"
+           (click)="filterDocsFlag()"
+        ></i>
+        <i class="fa fa-caret-left prev" aria-hidden="true" (click)="setActivePage(activePage, 'prev')"></i>
+        <i class="fa fa-caret-right next" aria-hidden="true" (click)="setActivePage(activePage, 'next')"></i>
+    </div>
+</div>
+<div class="docs-list_wrap">
+    <div class="docs-list" *ngFor="let page of filteredPages">
+        <app-docs-list-thumbnail [item]="page" [isActive]="page['pageNumber'] == activePage"></app-docs-list-thumbnail>
+    </div>
+</div>

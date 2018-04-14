@@ -1,0 +1,66 @@
+<div [class.isCopy]="isCopy" class="name-capture__item">
+    <p-dialog modal="true" header="{{ errorTitle }}" [(visible)]="display">
+        {{ errorMessage }}
+    </p-dialog>
+    <div class="name-capture__item-block info">
+        <div class="name-capture_row">
+            <div class="header">Role</div>
+            <div class="header">
+                <p-dropdown
+                    [options]="nameCaptureTypes"
+                    [(ngModel)]="role"
+                    (ngModelChange)="itemTypeChanged($event)"
+                    [disabled]="item.approved"
+                ></p-dropdown>
+                <i class="fa fa-times remove-block" (click)="removeItem()"></i>
+                <label
+                    (click)="handleCheckedChanged()"
+                    [class.approved]="item.approved"
+                    class="approve-block">
+                </label>
+            </div>
+        </div>
+        <div class="name-capture_row">
+            <div [class.isRequired]="partyIdRequired && !partyIdInput.value.length" class="name-capture_info">Party ID</div>
+            <div class="name-capture_data">
+                <input [disabled]="item.approved" #partyIdInput type="text" [(ngModel)]="partyId" />
+            </div>
+        </div>
+        <div class="name-capture_row">
+            <div [class.isRequired]="extensionIdRequired && !extensionIdInput.value.length" class="name-capture_info">Extension ID</div>
+            <div class="name-capture_data">
+                <input [disabled]="item.approved" #extensionIdInput type="text" [(ngModel)]="extensionId" />
+            </div>
+        </div>
+        <div class="name-capture_row">
+            <div [class.isRequired]="nameRequired && !nameInput.value.length" class="name-capture_info">Name</div>
+            <div class="name-capture_data">
+                <input [disabled]="item.approved" #nameInput type="text" [(ngModel)]="name" />
+            </div>
+        </div>
+        <div class="name-capture_row">
+            <div [class.isRequired]="addressRequired && !addressInput1.value.length" class="name-capture_info">Address 1</div>
+            <div class="name-capture_data">
+                <input [disabled]="item.approved" #addressInput1 type="text" [(ngModel)]="address1" />
+            </div>
+        </div>
+        <div class="name-capture_row">
+            <div [class.isRequired]="addressRequired && !addressInput2.value.length" class="name-capture_info">Address 2</div>
+            <div class="name-capture_data">
+                <input [disabled]="item.approved" #addressInput2 type="text" [(ngModel)]="address2" />
+            </div>
+        </div>
+        <div class="name-capture_row">
+            <div [class.isRequired]="addressRequired && !addressInput3.value.length" class="name-capture_info">Address 3</div>
+            <div class="name-capture_data">
+                <input [disabled]="item.approved" #addressInput3 type="text" [(ngModel)]="address3" />
+            </div>
+        </div>
+        <div class="name-capture_row">
+            <div [class.isRequired]="countryRequired && !countryInput.value.length" class="name-capture_info">Country</div>
+            <div class="name-capture_data">
+                <input [disabled]="item.approved" #countryInput type="text" [(ngModel)]="country" />
+            </div>
+        </div>
+    </div>
+</div>

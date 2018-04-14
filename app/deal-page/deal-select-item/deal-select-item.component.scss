@@ -1,0 +1,87 @@
+@import "../../../variables";
+
+:host {
+    display: table;
+    white-space: nowrap;
+    min-width: $fullWidth + 1px;
+    width: 100%;
+}
+
+.select-container {
+    display: table-row;
+
+    &.isOdd {
+        .select-item {
+            background: white;
+        }
+    }
+
+    &.active {
+        .select-item {
+            background: $blueBackground !important;
+            color: white;
+        }
+    }
+}
+
+.select-item {
+    display: table-cell;
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: #f1f1f1;
+    color: #4e4e4e;
+    font-size: 12px;
+
+    &.header {
+        background: #3a3f44;
+        color: white;
+        border-color: #202526;
+        font-size: 11px;
+        padding-top: 8px;
+        padding-bottom: 6px;
+    }
+
+    &.country_code {
+        width: $countryWidth;
+        max-width: $countryWidth;
+
+        i {
+            font-size: 12px;
+            color: $blueBackground;
+        }
+    }
+
+    &.deal_id {
+        width: $dealIdWidth;
+        max-width: $dealIdWidth;
+    }
+
+    &.product_code {
+        width: $productCodeWidth;
+        max-width: $productCodeWidth;
+    }
+
+    &.step_code {
+        width: $stepCodeWidth;
+        max-width: $stepCodeWidth;
+    }
+
+    &.system_code {
+        width: $systemCodeWidth;
+        max-width: $systemCodeWidth;
+    }
+
+    &.client_id {
+        width: $clientIdWidth;
+        max-width: $clientIdWidth;
+    }
+
+    &.registration_time_stamp {
+        width: $registrationTimeStampWidth;
+        max-width: $registrationTimeStampWidth;
+    }
+}

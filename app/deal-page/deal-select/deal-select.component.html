@@ -1,0 +1,27 @@
+<app-deal-select-filter [data]="items" (ApplyFilters)="changeList()"></app-deal-select-filter>
+<header>
+    <!--<div class="deal-list_search-wrap">
+        <input type="text" class="deal-list_search" />
+        <i class="fa fa-search" aria-hidden="true"></i>
+    </div>
+    <i (click)="toggleDealFilter('user')" [class.active]="this.userActive" class="fa fa-user-circle-o deal-list_filter_user" aria-hidden="true"></i>
+    <i (click)="toggleDealFilter('plane')" [class.active]="this.planeActive" class="fa fa-plane deal-list_filter_plane" aria-hidden="true"></i>-->
+    <i (click)="toggleDealFilter('prev')" class="fa fa-caret-left deal-list_filter_prev" aria-hidden="true"></i>
+    <i (click)="toggleDealFilter('next')" class="fa fa-caret-right deal-list_filter_next" aria-hidden="true"></i>
+</header>
+<div class="deal-list">
+    <app-deal-select-item
+        *ngFor="let item of items; let i = index"
+        [item]="item"
+        [isOdd]="i % 2 === 1"
+        [isActive]="item.id == activeDealId"
+        (onChange)="doubleClick($event)"
+    ></app-deal-select-item>
+</div>
+<div class="btns-list">
+    <app-custom-button
+        [text]="'OK'"
+        [icon]="'arrow-right'"
+        (click)="goToDeal()"
+    ></app-custom-button>
+</div>

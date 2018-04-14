@@ -1,0 +1,39 @@
+@import '../../../variables';
+
+button {
+    border: 0;
+    border-radius: 5px;
+    background: $blueBackground;
+    color: white;
+    padding: 11px 20px 10px;
+    cursor: pointer;
+    line-height: 1;
+    vertical-align: middle;
+
+    &.active {
+        background: white;
+        color: $blueBackground;
+    }
+
+    &.empty {
+        background: transparent!important;
+        border: 1px solid white!important;
+        color: white!important;
+    }
+
+    &.blue {
+        background: $blueBackground!important;
+        color: white!important;
+        border: 1px solid $blueBackground;
+    }
+
+    &.green {
+        background: $greenBackground!important;
+        color: white!important;
+        border: 1px solid $greenBackground;
+    }
+
+    i {
+        margin-right: 30px;
+    }
+}

@@ -1,0 +1,19 @@
+$blueBackground: #0175b0;
+$greenBackground: #78c43d;
+$redBackground: #c33531;
+
+$countryWidth: 100px;
+$dealIdWidth: 100px;
+$productCodeWidth: 100px;
+$stepCodeWidth: 100px;
+$systemCodeWidth: 100px;
+$clientIdWidth: 150px;
+$registrationTimeStampWidth: 150px;
+
+$fullWidth: $countryWidth
++ $dealIdWidth
++ $productCodeWidth
++ $stepCodeWidth
++ $systemCodeWidth
++ $clientIdWidth
++ $registrationTimeStampWidth;
