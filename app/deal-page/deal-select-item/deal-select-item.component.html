@@ -1,0 +1,47 @@
+<div *ngIf="type === 'header'" class="select-container">
+    <div class="select-item country_code header">
+        Country Code<!-- no Country code -->
+    </div>
+    <div class="select-item client_id header">
+        Client ID
+    </div>
+    <div class="select-item deal_id header">
+        Deal ID <!-- Registration id -->
+    </div>
+    <div class="select-item system_code header">
+        System Code
+    </div>
+    <div class="select-item product_code header">
+        Product Code
+    </div>
+    <div class="select-item step_code header">
+        Step Code
+    </div>
+    <div class="select-item registration_time_stamp header">
+        Registration Time Stamp <!--  -->
+    </div>
+</div>
+<div [class.active]="isActive" *ngIf="type !== 'header'" [class.isOdd]="isOdd" class="select-container">
+    <div class="select-item country_code">
+        <!--<i class="fa fa-key" aria-hidden="true" (click)="onKeyClicked($event)"></i>-->
+        {{ item['countryCode'] }}
+    </div>
+    <div class="select-item client_id">
+        {{ item['clientId'] }}
+    </div>
+    <div class="select-item deal_id">
+        {{ item['dealId'] }}
+    </div>
+    <div class="select-item system_code">
+        {{ item['systemCode'] }}
+    </div>
+    <div class="select-item product_code">
+        {{ item['productCode'] }}
+    </div>
+    <div class="select-item step_code">
+        {{ item['stepCode'] }}
+    </div>
+    <div class="select-item registration_time_stamp">
+        {{ item['registrationTimeStamp'] }}
+    </div>
+</div>

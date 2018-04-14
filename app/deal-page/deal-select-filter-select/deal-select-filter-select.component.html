@@ -1,0 +1,10 @@
+<span class="deal-select_filter-label">
+    {{ filterLabel }}
+</span>
+<p-dropdown
+    class="deal-select_filter-type"
+    [options]="searchTypes"
+    [(ngModel)]="searchType"
+    (ngModelChange)="filterChanged()"
+>
+</p-dropdown>

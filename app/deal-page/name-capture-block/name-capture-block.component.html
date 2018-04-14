@@ -1,0 +1,7 @@
+<div *ngFor="let item of items">
+  <app-name-capture-item [item]="item" (updateElems)="updateElems($event)"></app-name-capture-item>
+</div>
+<app-name-capture-add (updateElems)="updateElems($event)"></app-name-capture-add>
+<div *ngFor="let item of itemsCopies">
+    <app-name-capture-item [item]="item" [isCopy]="true" (updateElems)="updateElems($event)"></app-name-capture-item>
+</div>

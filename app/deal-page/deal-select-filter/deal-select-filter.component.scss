@@ -1,0 +1,32 @@
+:host {
+    background: #3a3f43;
+    padding: 20px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.filter-block {
+    width: 50%;
+    float: left;
+
+    &.right {
+        float: right;
+    }
+
+    @media(max-width: 1155px) {
+        width: 100%;
+        float: none;
+    }
+}
+
+.btns-list {
+    text-align: right;
+
+    &:before,
+    &:after {
+        content: '';
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+    }
+}

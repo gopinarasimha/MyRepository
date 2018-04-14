@@ -1,0 +1,121 @@
+@import '../../../variables';
+
+.deal-list {
+    width: 100%;
+    height: 150px;
+
+    @media (max-width: $fullWidth) {
+        overflow: scroll;
+    }
+}
+
+.btns-list {
+    text-align: right;
+    margin-top: 20px;
+    margin-right: 20px;
+
+    &:before,
+    &:after {
+        content: '';
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+    }
+}
+
+header {
+    display: block;
+    background: $blueBackground;
+    padding: 5px 20px;
+    text-align: right;
+
+    .deal-list_search {
+        color: white;
+        background-color: #096a9f;
+        border: 1px solid #096695;
+        border-radius: 3px;
+        padding: 2px 30px 2px 5px;
+        outline: none;
+
+        &-wrap {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: middle;
+
+            i {
+                position: absolute;
+                top: 50%;
+                right: 5px;
+                transform: translateY(-50%);
+                color: white;
+            }
+        }
+    }
+
+    i {
+        position: relative;
+        display: inline-block;
+        margin-left: 5px;
+        color: white;
+        width: 22px;
+        height: 22px;
+        border: 1px solid transparent;
+        box-sizing: border-box;
+        vertical-align: middle;
+        cursor: pointer;
+        border-radius: 3px;
+
+        &.deal-list_filter_prev {
+            &:before {
+                transform: translate(calc(-50% + 2px), -50%)
+            }
+
+            &:after {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                width: 2px;
+                height: 10px;
+                background-color: white;
+                top: calc(50% - 5px);
+                left: 5px;
+            }
+        }
+
+        &.deal-list_filter_next {
+            &:before {
+                transform: translate(calc(-50% - 2px), -50%)
+            }
+
+            &:after {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                width: 2px;
+                height: 10px;
+                background-color: white;
+                top: calc(50% - 5px);
+                right: 5px;
+            }
+        }
+
+        &.deal-list_filter_user {
+            font-size: 12px;
+        }
+
+        &:before {
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &:hover,
+        &.active {
+            background-color: #096a9f;
+            border: 1px solid #096695;
+        }
+    }
+}

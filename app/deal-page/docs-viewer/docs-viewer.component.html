@@ -1,0 +1,14 @@
+<div class="docs-viewer_wrap">
+    <div class="docs-viewer_controls pagination">
+        <i class="fa fa-caret-left first" aria-hidden="true" (click)="goFirst()"></i>
+        <i class="fa fa-caret-left" aria-hidden="true" (click)="goPrevious()"></i>
+        <input #selectPage type="text" [value]="item.pageNumber" (keyup.enter)="goToPage(selectPage.value)" />
+        <i class="fa fa-caret-right" aria-hidden="true" (click)="goNext()"></i>
+        <i class="fa fa-caret-right last" aria-hidden="true" (click)="goLast()"></i>
+    </div>
+    <div #el class="docs-viewer"></div>
+    <div class="docs-viewer_controls">
+        <i class="fa fa-search-plus" (click)="zoomIn()" aria-hidden="true"></i>
+        <i class="fa fa-search-minus" (click)="zoomOut()" aria-hidden="true"></i>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+:host {
+    display: block;
+    float: left;
+    width: 50%;
+
+    /deep/ .deal-info_tabs {
+        &.ui-tabview {
+            padding: 0;
+            border-radius: 0;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            overflow: hidden;
+        }
+
+        .ui-tabview-nav {
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+            border-radius: initial;
+            background: #f1f4fb;
+            padding: 0 !important;
+            font-size: 14px;
+
+            li {
+                display: table-cell;
+                width: 25%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                border-radius: initial;
+                background: transparent !important;
+                margin: 0;
+                border: 0;
+                padding: 0 10px;
+                top: 0 !important;
+                box-sizing: border-box;
+                border-bottom: 1px solid transparent;
+
+                a {
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                    padding-left: 0;
+                    padding-right: 0;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                &.ui-state-active {
+                    color: #34aa33;
+                    border-bottom: 1px solid #34aa33;
+                    background: transparent;
+
+                    a {
+                        color: inherit;
+
+                        span {
+                            color: inherit;
+                        }
+                    }
+                }
+            }
+        }
+
+        .ui-tabview-panel {
+            height: calc(100vh - 85px);
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+    }
+}

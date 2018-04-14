@@ -1,0 +1,43 @@
+@import "../../../variables";
+
+:host /deep/ {
+    float: right;
+    text-align: right;
+    margin-bottom: 10px;
+
+    > * {
+        text-align: initial;
+    }
+
+    .ui-dropdown {
+        border: 0;
+        top: -1px;
+        width: 368px!important;
+    }
+
+    .ui-dropdown-trigger {
+        background: $blueBackground;
+        color: white;
+    }
+}
+
+:host {
+    &:before,
+    &:after {
+        content: '';
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        clear: both;
+    }
+}
+
+.deal-select_filter-label {
+    display: inline-block;
+    vertical-align: middle;
+    color: white;
+}
+
+.deal-select_filter-type {
+    margin-left: 10px
+}

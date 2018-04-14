@@ -1,0 +1,48 @@
+@import '../../../variables';
+@import '../../../mixin';
+
+.deal-page_docs {
+    float: left;
+    width: 50%;
+
+    @include content-height();
+}
+
+.deal-page_docs-thumbnails {
+    width: 190px;
+    float: left;
+    margin-right: 10px;
+    background: white;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.deal-page_docs-viewer {
+    width: calc(100% - 210px);
+    float: left;
+    background: white;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.block-header {
+    width: 100%;
+    float: left;
+    background: $blueBackground;
+    padding: 9px;
+    box-sizing: border-box;
+    color: #dfe9ff;
+    font-size: 14px;
+    margin-bottom: 10px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.page_controls {
+    clear: both;
+    padding: 20px 0;
+    text-align: right;
+}

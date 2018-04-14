@@ -1,0 +1,239 @@
+@import '../../../variables';
+
+$background: white;
+$backgroundOdd: #f0f0f0;
+$backgroundGreen: #d9ead8;
+$backgroundBlue: #cfe2f0;
+$backgroundHeader: #3b4043;
+
+$headerColor: #c5c9ca;
+
+$borderColor: #d9d7d4;
+$headerBorderColor: #252727;
+
+$widgetFirstCellWidth: 140px;
+$widgetApproveWidth: 140px;
+$widgetRowHeaderHeight: 25px;
+$widgetRowHeight: 30px;
+
+.ui-dialog-mask {
+    opacity: 0.7;
+}
+
+.name-capture {
+    &__item {
+        width: 100%;
+        position: relative;
+        margin-bottom: 20px;
+
+        &.isCopy {
+            opacity: 0.5;
+        }
+
+        &:after {
+            content: '';
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+            clear: both;
+        }
+
+        &-table {
+            display: table;
+            table-layout: fixed;
+            height: 100%;
+
+            .name-capture_row {
+                display: table-row;
+
+                &:first-child {
+                    height: $widgetRowHeaderHeight;
+                }
+
+                .name-capture_cell {
+                    display: table-cell;
+                    height: 100%;
+                }
+            }
+        }
+
+        &-block {
+            &.info {
+                width: 100%;
+
+                .name-capture_row {
+
+                    &:nth-child(odd) {
+                        > div {
+                            &:first-child {
+                                background: $backgroundOdd;
+                            }
+
+                            &:last-child {
+                                background: $backgroundBlue;
+                            }
+                        }
+                    }
+
+                    > div {
+                        &:last-child {
+                            width: calc(100% - #{$widgetFirstCellWidth});
+                            background: $backgroundGreen;
+                            /*
+                            border-right: 1px solid $borderColor;
+                            border-bottom: 1px solid $borderColor;*/
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .ui-dropdown-label {
+            line-height: 1;
+        }
+
+        .ui-dropdown .ui-dropdown-trigger {
+            background: $blueBackground;
+            color: white;
+
+            .fa {
+                display: inherit;
+                margin-top: 0.3em;
+                margin-left: -0.2em;
+            }
+        }
+
+        .ui-dropdown {
+            border: none;
+            border-radius: 4px;
+        }
+
+        .ui-dialog-titlebar {
+            background: $redBackground;
+            color: white;
+
+            &-close {
+                color: white;
+
+                &:hover {
+                    color: white;
+                    border-color: transparent;
+                    background: transparent;
+                }
+            }
+        }
+    }
+
+    &__block {
+        display: table;
+        table-layout: fixed;
+    }
+
+    &_row {
+        width: 100%;
+        line-height: $widgetRowHeight;
+        text-align: left;
+
+        > div {
+            border: 1px solid $borderColor;
+            border-bottom: 0;
+            border-right: 0;
+        }
+
+        &:last-child {
+            > div {
+                border-bottom: 1px solid $borderColor;
+            }
+        }
+
+        &:first-child {
+            > div {
+                border: 1px solid $headerBorderColor;
+            }
+        }
+
+        > div {
+            width: $widgetFirstCellWidth;
+            height: $widgetRowHeight;
+            line-height: $widgetRowHeight;
+            float: left;
+            box-sizing: border-box;
+            background: $background;
+            padding-left: 10px;
+
+            &.header {
+                height: $widgetRowHeaderHeight;
+                line-height: $widgetRowHeaderHeight;
+            }
+        }
+    }
+
+    &_data {
+        input {
+            display: block;
+            outline: none;
+            background: transparent;
+            border: 0;
+            width: 100%;
+            padding-right: 10px;
+            margin-top: 3px;
+        }
+    }
+
+    &_info {
+        &.isRequired {
+            &:after {
+                content: '*';
+                color: red;
+            }
+        }
+    }
+}
+
+.header {
+    font-weight: bold;
+    background: $backgroundHeader !important;
+    color: $headerColor;
+    font-size: 12px;
+}
+
+.approve-block {
+    display: inline-block;
+    float: right;
+    margin-top: 3px;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: 2px solid black;
+    text-align: center;
+    background: white;
+    margin-right: 5px;
+
+    &:before {
+        content: initial;
+    }
+
+    &.approved {
+        background: $greenBackground;
+        border: 2px solid $greenBackground;
+
+        &:before {
+            content: '\2714';
+            font-size: 14px;
+            color: white;
+            line-height: 14px;
+            vertical-align: top;
+            font-weight: bold;
+        }
+    }
+}
+
+.remove-block {
+    float: right;
+    padding: 6px;
+    margin-right: 4px;
+    cursor: pointer;
+}

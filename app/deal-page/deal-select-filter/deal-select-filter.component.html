@@ -1,0 +1,81 @@
+<div class="filter-block right">
+    <app-deal-select-filter-select
+        #appFilterItem
+        [searchTypes]="dealIds"
+        [filterName]="'dealId'"
+        [filterLabel]="'Deal ID'"
+        (onChange)="filterChanged($event)"
+    ></app-deal-select-filter-select>
+    <!--<app-deal-select-filter-search
+        #appFilterItem
+        [filterName]="'registrationId'"
+        [filterLabel]="'Registration ID'"
+        (onChange)="filterChanged($event)"
+    ></app-deal-select-filter-search>
+    <app-deal-select-filter-search
+        #appFilterItem
+        [filterName]="'stepId'"
+        [filterLabel]="'Step ID'"
+        (onChange)="filterChanged($event)"
+    ></app-deal-select-filter-search>
+    <app-deal-select-filter-search
+        #appFilterItem
+        [filterName]="'related_reference'"
+        [filterLabel]="'Related Ref No.'"
+        (onChange)="filterChanged($event)"
+    ></app-deal-select-filter-search>
+    <app-deal-select-filter-double
+        #appFilterItem
+        [filterName]="'transaction_amount'"
+        [filterLabel]="'Transaction Amt'"
+        (onChange)="filterChanged($event)"
+    >
+    </app-deal-select-filter-double>-->
+</div>
+<!--<div class="filter-block">
+    <app-deal-select-filter-select
+        #appFilterItem
+        [filterName]="'productCode'"
+        [filterLabel]="'Product Code'"
+        (onChange)="filterChanged($event)"
+    ></app-deal-select-filter-select>
+    <app-deal-select-filter-search
+        #appFilterItem
+        [filterName]="'deal_id'"
+        [filterLabel]="'Deal ID'"
+        (onChange)="filterChanged($event)"
+    ></app-deal-select-filter-search>
+    <app-deal-select-filter-search
+        #appFilterItem
+        [filterName]="'rmCode'"
+        [filterLabel]="'RM Code'"
+        (onChange)="filterChanged($event)"
+    ></app-deal-select-filter-search>
+    <app-deal-select-filter-search
+        #appFilterItem
+        [filterName]="'customerId'"
+        [filterLabel]="'Customer ID'"
+        (onChange)="filterChanged($event)"
+    ></app-deal-select-filter-search>
+    <app-deal-select-filter-double
+        #appFilterItem
+        [filterName]="'mode_of_presentation'"
+        [filterLabel]="'Mode of Presentation'"
+        (onChange)="filterChanged($event)"
+    >
+    </app-deal-select-filter-double>
+</div>-->
+<div class="btns-list">
+    <app-custom-button
+        [text]="'Apply'"
+        [icon]="'check'"
+        (click)="applyFilters()"
+    ></app-custom-button>
+
+    <app-custom-button
+        [text]="'Clear'"
+        [icon]="'refresh'"
+        [empty]="true"
+        (click)="clearFilters()"
+    ></app-custom-button>
+</div>
